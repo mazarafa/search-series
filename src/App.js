@@ -8,10 +8,10 @@ import 'bulma/css/bulma.css';
 
 
 class App extends Component {
-  state = { results:[]}
+  state = { usedSearch: false, results:[]}
 
   _handleResults = (results) => {
-    this.setState({results})
+    this.setState({results, usedSearch:true})
   }
 
   /*   _renderResults(){
@@ -28,6 +28,16 @@ class App extends Component {
         )
       })
   } */
+
+  _renderResults(){
+    // return typeof this.state.results === 'undefined'
+    return this.state.results.length === 0 
+      ? <p>Sorry! Results not found!</p>
+      //: this._renderResults()
+      :<SearchList movies = {this.state.results}/>
+    
+
+  }
   
   render(){
     return (
@@ -36,12 +46,16 @@ class App extends Component {
         <div className="searchForm-wrapper">
           <SearchForm onResults={this._handleResults}/>
         </div>
+        {this.state.usedSearch
+          ? this._renderResults()
+          : <small>Use The Form to search a movies</small>
+        }
         
-        { this.state.results.length === 0 
+        {/* { this.state.results.length === 0 
           ? <p>Sin resultados</p>
           //: this._renderResults()
           :<SearchList movies = {this.state.results}/>
-        }
+        } */}
        
       </div>
     );
