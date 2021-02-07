@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import './../App.css';
 
 const  API_KEY='e6410ead'
 
@@ -26,7 +27,7 @@ export class SearchForm extends Component{
 
     render(){
         return (
-            <form onSubmit={this._handleSubmit}>
+            <form className="formulario-center " onSubmit={this._handleSubmit}>
               <div className="field has-addons">
                 <div className="control">
                   <input

@@ -3,6 +3,8 @@ import {  Title} from "./components/Title";
 import { SearchForm} from "./components/SearchForm";
 import { SearchList} from "./components/SearchList";
 
+
+
 import './App.css';
 import 'bulma/css/bulma.css';
 
@@ -32,7 +34,7 @@ class App extends Component {
   _renderResults(){
     // return typeof this.state.results === 'undefined'
     return this.state.results.length === 0 
-      ? <p>Sorry! Results not found!</p>
+      ? <p className="erro-text">Sorry! Results not found!</p>
       //: this._renderResults()
       :<SearchList movies = {this.state.results}/>
     
@@ -42,20 +44,24 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <Title>NETFLIX</Title>
-        <div className="searchForm-wrapper">
-          <SearchForm onResults={this._handleResults}/>
+        <div className="efect-point">
+          <div className="title-star">
+            <Title style="title">NETFLIX</Title>
+          </div>
+          <div className="searchForm-wrapper">
+            <SearchForm onResults={this._handleResults}/>
+          </div>
+          
+          {/* { this.state.results.length === 0 
+            ? <p>Sin resultados</p>
+            //: this._renderResults()
+            :<SearchList movies = {this.state.results}/>
+          } */}
         </div>
         {this.state.usedSearch
-          ? this._renderResults()
-          : <small>Use The Form to search a movies</small>
+            ? this._renderResults()
+            : <small className="information-seach">Use The Form to search a movies</small>
         }
-        
-        {/* { this.state.results.length === 0 
-          ? <p>Sin resultados</p>
-          //: this._renderResults()
-          :<SearchList movies = {this.state.results}/>
-        } */}
        
       </div>
     );

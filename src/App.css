@@ -2,7 +2,22 @@
   padding-top: 36px;
   text-align: center;
 }
+.efect-point{
+  margin-top: -36px;
+  background-image: url(./img/opa.jpg);
 
+}
+
+.title-star{
+  color: red;
+  padding-top: 18px;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.information-seach{
+  color: white;
+}
 .SearchForm-wrapper {
   display: flex;
   justify-content: center;
@@ -18,4 +33,19 @@
 .SearchList-item {
   margin-bottom: 24px;
   width: 48%;
+}
+
+.formulario-center{
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+
+}
+
+.erro-text{
+  margin-top: 20px;
+  color: white;
 }
