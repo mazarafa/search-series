@@ -46,7 +46,7 @@ class App extends Component {
       <div className="App">
         <div className="efect-point">
           <div className="title-star">
-            <Title style="title">NETFLIX</Title>
+            <Title>NETFLIX</Title>
           </div>
           <div className="searchForm-wrapper">
             <SearchForm onResults={this._handleResults}/>
